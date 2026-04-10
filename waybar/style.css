@@ -11,8 +11,11 @@ window#waybar {
     border-bottom: 2px solid #808080;
 }
 
-/* Estilo para Botones (Salientes) */
-#custom-start, #workspaces button, #idle_inhibitor, #custom-gammastep {
+/* Botones con relieve hacia afuera */
+#custom-start, 
+#workspaces button, 
+#idle_inhibitor, 
+#custom-gammastep {
     background-color: #c0c0c0;
     color: #000000;
     margin: 4px 2px;
@@ -26,8 +29,9 @@ window#waybar {
 
 #custom-start { font-weight: bold; margin-left: 4px; }
 
-/* Botones Presionados / Activos (Hundidos) */
-#workspaces button.focused, #idle_inhibitor.activated {
+/* Botones presionados */
+#workspaces button.focused, 
+#idle_inhibitor.activated {
     background-color: #dcdcdc;
     border-top-color: #808080;
     border-left-color: #808080;
@@ -35,8 +39,14 @@ window#waybar {
     border-right-color: #ffffff;
 }
 
-/* Áreas de información (Hundidas) */
-#clock, #pulseaudio, #network, #tray {
+/* Áreas de información con relieve hacia adentro */
+#clock, 
+#pulseaudio, 
+#network, 
+#tray, 
+#cpu, 
+#memory, 
+#network.speed {
     background-color: #c0c0c0;
     margin: 4px 2px;
     padding: 0px 8px;
@@ -49,7 +59,6 @@ window#waybar {
 
 #window { font-weight: bold; color: #000080; }
 
-/* Estilo del Calendario (Tooltip) */
 tooltip {
     background-color: #c0c0c0;
     border: 2px solid;
@@ -58,7 +67,5 @@ tooltip {
     border-bottom-color: #808080;
     border-right-color: #808080;
 }
-tooltip label {
-    color: #000000;
-}
+tooltip label { color: #000000; }
 
