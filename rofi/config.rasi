@@ -1,0 +1,26 @@
+/**
+ * Configuración base para Rofi - Estilo Windows 98
+ **/
+
+configuration {
+    /* Muestra iconos de aplicaciones (usa el set Chicago95) */
+    show-icons:         true;
+    icon-theme:         "Chicago95";
+    
+    /* Configuración de la interfaz */
+    display-drun:       "Programas:";
+    display-window:     "Ventanas:";
+    display-run:        "Ejecutar:";
+    
+    /* Comportamiento */
+    terminal:           "foot";
+    drun-display-format: "{name}";
+    location:           0;
+    disable-history:    false;
+    hide-scrollbar:     false;
+    sidebar-mode:       false;
+}
+
+/* Carga el archivo de estilo que creamos anteriormente */
+@theme "~/.config/rofi/windows98.rasi"
+

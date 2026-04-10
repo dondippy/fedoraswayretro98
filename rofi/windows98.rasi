@@ -1,0 +1,79 @@
+/**
+ * Tema Windows 98 Ultra-Compatible
+ * Solución al error de bordes múltiples
+ **/
+
+* {
+    bg-color:      #c0c0c0;
+    fg-color:      #000000;
+    win-blue:      #000080;
+    win-white:     #ffffff;
+    win-gray-dark: #808080;
+    
+    background-color: @bg-color;
+    text-color:       @fg-color;
+    font:             "Sans 10";
+}
+
+window {
+    width:            450px;
+    border:           3px;
+    /* Definición individual para máxima compatibilidad */
+    border-top-color:    @win-white;
+    border-left-color:   @win-white;
+    border-bottom-color: @win-gray-dark;
+    border-right-color:  @win-gray-dark;
+    padding:          2px;
+}
+
+mainbox {
+    padding: 10px;
+    children: [ inputbar, listview ];
+}
+
+inputbar {
+    padding:    5px;
+    children:   [ prompt, entry ];
+}
+
+prompt {
+    margin: 0px 5px 0px 0px;
+}
+
+entry {
+    background-color: @win-white;
+    border:           2px;
+    /* Efecto hundido individual */
+    border-top-color:    @win-gray-dark;
+    border-left-color:   @win-gray-dark;
+    border-bottom-color: @win-white;
+    border-right-color:  @win-white;
+    padding:          4px;
+}
+
+listview {
+    border:       2px 0px 0px;
+    border-color: @win-gray-dark;
+    margin:       10px 0px 0px;
+    padding:      5px 0px 0px;
+}
+
+element {
+    padding: 4px;
+}
+
+element selected {
+    background-color: @win-blue;
+    text-color:       @win-white;
+}
+
+element-icon {
+    size:   24px;
+    margin: 0 10px 0 0;
+}
+
+element-text {
+    vertical-align: 0.5;
+    text-color: inherit;
+}
+

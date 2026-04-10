@@ -1,0 +1,69 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 4,
+    "modules-left": ["custom-start", "sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["custom-gammastep", "idle_inhibitor", "tray", "pulseaudio", "network", "clock"],
+
+    "custom-start": {
+        "format": " Inicio",
+        "on-click": "rofi -show drun",
+        "tooltip": false
+    },
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{name}"
+    },
+
+    "custom-gammastep": {
+        "interval": 2,
+        "exec": "pgrep -x gammastep > /dev/null && echo 'Luz: ON' || echo 'Luz: OFF'",
+        "on-click": "pgrep -x gammastep > /dev/null && killall gammastep || gammastep -O 3500 &",
+        "tooltip": false
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "Activo",
+            "deactivated": "Idle"
+        }
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "month",
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#000080'><b>{}</b></span>",
+                "days":       "<span color='#000000'>{}</span>",
+                "weeks":      "<span color='#808080'>w{}</span>",
+                "weekdays":   "<span color='#800000'><b>{}</b></span>",
+                "today":      "<span color='#ffffff' background='#000080'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "pulseaudio": {
+        "format": "Vol: {volume}%",
+        "format-muted": "Mudo",
+        "on-click": "pavucontrol"
+    },
+
+    "network": {
+        "format-wifi": "WiFi",
+        "format-ethernet": "Eth"
+    }
+}
+

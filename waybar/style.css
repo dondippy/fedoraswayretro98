@@ -1,0 +1,64 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "MS Sans Serif", "Sans", sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: #c0c0c0;
+    color: #000000;
+    border-bottom: 2px solid #808080;
+}
+
+/* Estilo para Botones (Salientes) */
+#custom-start, #workspaces button, #idle_inhibitor, #custom-gammastep {
+    background-color: #c0c0c0;
+    color: #000000;
+    margin: 4px 2px;
+    padding: 0px 10px;
+    border: 2px solid;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+}
+
+#custom-start { font-weight: bold; margin-left: 4px; }
+
+/* Botones Presionados / Activos (Hundidos) */
+#workspaces button.focused, #idle_inhibitor.activated {
+    background-color: #dcdcdc;
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-bottom-color: #ffffff;
+    border-right-color: #ffffff;
+}
+
+/* Áreas de información (Hundidas) */
+#clock, #pulseaudio, #network, #tray {
+    background-color: #c0c0c0;
+    margin: 4px 2px;
+    padding: 0px 8px;
+    border: 2px solid;
+    border-top-color: #808080;
+    border-left-color: #808080;
+    border-bottom-color: #ffffff;
+    border-right-color: #ffffff;
+}
+
+#window { font-weight: bold; color: #000080; }
+
+/* Estilo del Calendario (Tooltip) */
+tooltip {
+    background-color: #c0c0c0;
+    border: 2px solid;
+    border-top-color: #ffffff;
+    border-left-color: #ffffff;
+    border-bottom-color: #808080;
+    border-right-color: #808080;
+}
+tooltip label {
+    color: #000000;
+}
+
