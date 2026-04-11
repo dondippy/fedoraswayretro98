@@ -1,0 +1,13 @@
+##remover firefox
+rpm-ostree override remove firefox firefox-langpacks
+## repositorios rpm-ostree
+rpm-ostree install   https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm   https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+##programas instalados por rpm-ostree
+sudo rpm-ostree install virt-manager libvirt-daemon-config-network libvirt-daemon-kvm qemu-kvm gammastep steam
+###flatpaks
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.mozilla.firefox flathub org.videolan.VLC com.obsproject.Studio flathub it.mijorus.gearlever flathub md.obsidian.Obsidian org.libreoffice.LibreOffice org.localsend.localsend_app org.fedoraproject.MediaWriter io.github.peazip.PeaZip flathub dev.vencord.Vesktop flathub org.kde.okular org.remmina.Remmina flathub dev.zed.Zed 
+##dependencia nwg-look
+sudo dnf copr enable solopasha/hyprland
+sudo dnf install nwg-look
+ 
