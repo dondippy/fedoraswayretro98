@@ -31,7 +31,7 @@ set $menu $rofi_cmd -show combi -combi-modes drun#run -modes combi
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 # Requires: desktop-backgrounds-compat, swaybg, jxl-pixbuf-loader
-output * bg /home/isaacmc/Pictures/wall.jpg fill
+output * bg /home/isaacmc/Imágenes/wall.jpg fill
 #
 # Example configuration:
 #
@@ -77,6 +77,8 @@ output HDMI-A-1 resolution 3840x2160@60Hz position 0,0 scale 1.5
     bindsym $mod+Shift+d exec thunar
     # Start Steam with Mod+s
     bindsym $mod+Shift+s exec steam
+    #toolbox
+    bindsym $mod+t exec $term -e toolbox enter tools
 
 
  
@@ -228,30 +230,23 @@ bindsym $mod+r mode "resize"
 #
 #
 #Gaps
-# Fuente clásica (instala 'msttcorefonts' o usa una similar como 'Verdana')
-#font pango:MS Sans Serif 8
+# Fuente: 'Cantarell' es la de Fedora, pero 'MS Sans Serif' mantiene el look retro
+# Fuente: Cantarell (Fedora) / MS Sans Serif (Retro)
+font pango:Cantarell 8
 
-# Configuración de bordes (estilo W98)
-default_border normal 4
-default_floating_border normal 4
+# CONFIGURACIÓN DE BORDES: Estilo 'pixel' para eliminar la barra de título
+# El número 4 mantiene el grosor clásico de Windows 98
+default_border pixel 4
+default_floating_border pixel 4
 hide_edge_borders none
 
-# Colores precisos de la paleta Win98
+# COLORES PALETA FEDORA (Look de marco único)
+# Se igualan los colores de 'border' y 'child_border' para un efecto de bloque sólido
 # class                 border  bground text    indicator child_border
-client.focused          #000080 #000080 #ffffff #000080   #000080
-client.focused_inactive #c0c0c0 #c0c0c0 #000000 #c0c0c0   #c0c0c0
-client.unfocused        #c0c0c0 #c0c0c0 #808080 #c0c0c0   #c0c0c0
-client.urgent           #ff0000 #ff0000 #ffffff #ff0000   #ff0000
-
-# Wallpaper clásico (Verde Azulado)
-#output * bg #008080 solid_color
-
-#
-gaps inner 5
-gaps outer 2
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="task_dialog"] floating enable
-smart_gaps on
+client.focused          #51a2da #51a2da #ffffff #51a2da   #51a2da
+client.focused_inactive #c4cde1 #c4cde1 #294172 #c4cde1   #c4cde1
+client.unfocused        #c4cde1 #c4cde1 #6e7a91 #c4cde1   #c4cde1
+client.urgent           #e55d50 #e55d50 #ffffff #e55d50   #e55d50
 
 
 #
@@ -267,9 +262,12 @@ seat seat0 xcursor_theme gBiga 42
 #
 #autostart applications
 #
-exec swaymsg 'workspace 1; exec firefox'
+exec swaymsg 'workspace 1; exec flatpak run org.mozilla.firefox'
 exec swaymsg 'workspace 2; exec steam'
 exec swaymsg 'workspace 3; exec flatpak run dev.vencord.Vesktop'
+exec gammastep -m wayland
+# Iniciar una terminal (foot, alacritty, kitty, etc.) ejecutando el toolbox 'tools'
+exec $term -e toolbox enter tools
 
 
 
