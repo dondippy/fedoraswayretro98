@@ -232,16 +232,25 @@ bindsym $mod+r mode "resize"
 #Gaps
 # Fuente: 'Cantarell' es la de Fedora, pero 'MS Sans Serif' mantiene el look retro
 # Fuente: Cantarell (Fedora) / MS Sans Serif (Retro)
+# Fuente: Cantarell (Fedora) / MS Sans Serif (Retro)
 font pango:Cantarell 8
 
-# CONFIGURACIÓN DE BORDES: Estilo 'pixel' para eliminar la barra de título
-# El número 4 mantiene el grosor clásico de Windows 98
+# --- CONFIGURACIÓN DE GAPS (ESPACIOS) ---
+# Espacio entre ventanas
+gaps inner 4
+# Espacio entre ventanas y los bordes de la pantalla/barra
+gaps outer 6
+
+# Opcional: Solo mostrar gaps si hay más de una ventana
+# smart_gaps on
+# ---------------------------------------
+
+# CONFIGURACIÓN DE BORDES
 default_border pixel 4
 default_floating_border pixel 4
 hide_edge_borders none
 
-# COLORES PALETA FEDORA (Look de marco único)
-# Se igualan los colores de 'border' y 'child_border' para un efecto de bloque sólido
+# COLORES PALETA FEDORA
 # class                 border  bground text    indicator child_border
 client.focused          #51a2da #51a2da #ffffff #51a2da   #51a2da
 client.focused_inactive #c4cde1 #c4cde1 #294172 #c4cde1   #c4cde1
