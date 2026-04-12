@@ -272,7 +272,7 @@ seat seat0 xcursor_theme gBiga 42
 #autostart applications
 #
 exec swaymsg 'workspace 1; exec flatpak run org.mozilla.firefox'
-exec swaymsg 'workspace 2; exec steam'
+#exec swaymsg 'workspace 2; exec steam'
 exec swaymsg 'workspace 3; exec flatpak run dev.vencord.Vesktop'
 exec gammastep -m wayland
 # Iniciar una terminal (foot, alacritty, kitty, etc.) ejecutando el toolbox 'tools'
