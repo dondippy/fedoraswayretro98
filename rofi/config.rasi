@@ -3,12 +3,15 @@
  **/
 
 configuration {
+    /* Limita la lista a 5 elementos visibles */
+    lines:              5;
+
     /* Muestra iconos de aplicaciones (usa el set Chicago95) */
     show-icons:         true;
     icon-theme:         "Chicago95";
     
     /* Configuración de la interfaz */
-    display-drun:       "Programas:";
+    display-drun:       ":";
     display-window:     "Ventanas:";
     display-run:        "Ejecutar:";
     

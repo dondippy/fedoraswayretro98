@@ -1,6 +1,5 @@
 /**
- * Tema Windows 98 Ultra-Compatible
- * Solución al error de bordes múltiples
+ * Tema Windows 98 Ultra-Compatible - Versión 5 elementos
  **/
 
 * {
@@ -18,7 +17,6 @@
 window {
     width:            450px;
     border:           3px;
-    /* Definición individual para máxima compatibilidad */
     border-top-color:    @win-white;
     border-left-color:   @win-white;
     border-bottom-color: @win-gray-dark;
@@ -43,7 +41,6 @@ prompt {
 entry {
     background-color: @win-white;
     border:           2px;
-    /* Efecto hundido individual */
     border-top-color:    @win-gray-dark;
     border-left-color:   @win-gray-dark;
     border-bottom-color: @win-white;
@@ -52,6 +49,10 @@ entry {
 }
 
 listview {
+    /* Ajustes para forzar la visualización de 5 elementos */
+    lines:        5;
+    fixed-height: true; 
+    
     border:       2px 0px 0px;
     border-color: @win-gray-dark;
     margin:       10px 0px 0px;

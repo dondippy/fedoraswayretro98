@@ -35,7 +35,7 @@ output * bg /home/isaacmc/Imágenes/wall.jpg fill
 #
 # Example configuration:
 #
-output HDMI-A-1 resolution 3840x2160@60Hz position 0,0 scale 1.5
+#output HDMI-A-1 resolution 3840x2160@60Hz position 0,0 scale 1.5
 #
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
@@ -237,9 +237,9 @@ font pango:Cantarell 8
 
 # --- CONFIGURACIÓN DE GAPS (ESPACIOS) ---
 # Espacio entre ventanas
-gaps inner 4
+gaps inner 1
 # Espacio entre ventanas y los bordes de la pantalla/barra
-gaps outer 6
+gaps outer 3
 
 # Opcional: Solo mostrar gaps si hay más de una ventana
 # smart_gaps on
@@ -266,13 +266,13 @@ exec_always {
     gsettings set org.gnome.desktop.interface icon-theme "SE98"
 }
 
-seat seat0 xcursor_theme gBiga 42
+seat seat0 xcursor_theme gBiga 24
 
 #
 #autostart applications
 #
-exec swaymsg 'workspace 1; exec flatpak run org.mozilla.firefox'
-#exec swaymsg 'workspace 2; exec steam'
+exec swaymsg 'workspace 1; exec flatpak run org.chromium.Chromium'
+exec swaymsg 'workspace 2; exec steam'
 exec swaymsg 'workspace 3; exec flatpak run dev.vencord.Vesktop'
 exec gammastep -m wayland
 # Iniciar una terminal (foot, alacritty, kitty, etc.) ejecutando el toolbox 'tools'

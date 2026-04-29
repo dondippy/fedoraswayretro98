@@ -11,11 +11,11 @@ window#waybar {
     border-bottom: 2px solid #808080;
 }
 
-/* Botones con relieve hacia afuera */
 #custom-start, 
 #workspaces button, 
 #idle_inhibitor, 
-#custom-gammastep {
+#custom-gammastep,
+#custom-power {
     background-color: #c0c0c0;
     color: #000000;
     margin: 4px 2px;
@@ -29,7 +29,6 @@ window#waybar {
 
 #custom-start { font-weight: bold; margin-left: 4px; }
 
-/* Botones presionados */
 #workspaces button.focused, 
 #idle_inhibitor.activated {
     background-color: #dcdcdc;
@@ -39,14 +38,14 @@ window#waybar {
     border-right-color: #ffffff;
 }
 
-/* Áreas de información con relieve hacia adentro */
 #clock, 
 #pulseaudio, 
 #network, 
 #tray, 
 #cpu, 
 #memory, 
-#network.speed {
+#network.speed,
+#battery {
     background-color: #c0c0c0;
     margin: 4px 2px;
     padding: 0px 8px;
@@ -55,6 +54,10 @@ window#waybar {
     border-left-color: #808080;
     border-bottom-color: #ffffff;
     border-right-color: #ffffff;
+}
+
+#battery.critical:not(.charging) {
+    color: #ff0000;
 }
 
 #window { font-weight: bold; color: #000080; }

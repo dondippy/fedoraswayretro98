@@ -4,8 +4,10 @@
     "height": 34,
     "spacing": 4,
     "modules-left": ["custom-start", "sway/workspaces", "sway/mode"],
-    "modules-center": ["sway/window"],
+    "modules-center": [],
     "modules-right": [
+        "custom/power",
+        "battery",
         "custom-gammastep", 
         "idle_inhibitor", 
         "cpu", 
@@ -27,6 +29,26 @@
         "disable-scroll": true,
         "all-outputs": true,
         "format": "{name}"
+    },
+
+    "custom/power": {
+        "exec": "tuned-adm active | awk '{print $NF}'",
+        "interval": 5,
+        "format": "Modo: {}",
+        "on-click": "tuned-adm profile throughput-performance",
+        "on-click-right": "tuned-adm profile balanced",
+        "tooltip": false
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "Bat: {capacity}%",
+        "format-charging": "Carga: {capacity}%",
+        "format-plugged": "AC: {capacity}%",
+        "tooltip-format": "{timeTo}"
     },
 
     "custom-gammastep": {
@@ -69,6 +91,7 @@
     },
 
     "clock": {
+        "timezone": "Europe/Dublin",
         "format": "{:%I:%M %p}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
@@ -97,5 +120,4 @@
         "format-disconnected": "Desconectado"
     }
 }
-
 
